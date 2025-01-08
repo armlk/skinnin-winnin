@@ -1,7 +1,7 @@
-struct Weapon {
+typedef struct {
   float damage;
   float fireRate; // in Hz
   float weight;
-};
+} Weapon;
 
-Weapon *initWeapon(void);
+Weapon* initWeapon(void);
