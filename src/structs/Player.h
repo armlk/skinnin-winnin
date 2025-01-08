@@ -23,3 +23,4 @@ typedef struct {
 
 Player* initPlayer(void);
 void updatePlayer(Player* p);
+void drawPlayer(Player* p);
