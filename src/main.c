@@ -31,7 +31,7 @@ misrepresented
 
 */
 
-#include "raylib.h"
+#include "../build/external/raylib-master/src/raylib.h"
 
 #include "../include/resource_dir.h" // utility header for SearchAndSetResourceDir
 
