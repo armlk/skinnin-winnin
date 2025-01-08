@@ -1,7 +1,7 @@
 #include "../../build/external/raylib-master/src/raylib.h"
 #include <stdbool.h>
 
-struct Enemy {
+typedef struct {
   float health;
   bool isAlive;
   float moveSpeed;
@@ -9,7 +9,8 @@ struct Enemy {
   Vector2 velocity;
   Rectangle collider;
   Texture sprite;
-};
+} Enemy;
 
-Enemy *initEnemy(void);
-void updateEnemy(Enemy *e);
+Enemy* initEnemy(void);
+void updateEnemy(Enemy* e);
+void updateEnemies(Enemy* e[]);

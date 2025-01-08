@@ -1,8 +1,8 @@
 #include "../../build/external/raylib-master/src/raylib.h"
 
-struct Obstacle {
+typedef struct {
   Rectangle collider;
   Texture sprite;
-};
+} Obstacle;
 
-Obstacle *initObstacle(void);
+Obstacle* initObstacle(void);
