@@ -21,5 +21,5 @@ typedef struct {
   Weapon weapon;
 } Player;
 
-Player* initPlayer(void);
-void updatePlayer(Player* p);
+Player *initPlayer(void);
+void updatePlayer(Player *p);
