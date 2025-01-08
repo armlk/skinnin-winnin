@@ -21,18 +21,20 @@ Player* initPlayer(void) {
     return &p;
 }
 
-void updatePlayer(Player* p) {
-    if (!p->isAlive) {
-        return; // TODO: make a gameOver()
-    }
-    
-    int xDirection = IsKeyPressed(KEY_D) - IsKeyPressed(KEY_A); // 1 is right; -1 is left
-    int yDirection = IsKeyPressed(KEY_S) - IsKeyPressed(KEY_W); // 1 is down; -1 is up
-    Vector2 direction = (Vector2){xDirection, yDirection};
-    Vector2 addedPosition = Vector2Scale(direction, p->moveSpeed);
-    
-    p->position = Vector2Add(p->position, addedPosition);
-    p->position = Vector2Add(p->position, p->velocity);
+void updatePlayer(Player *p) {
+  if (!p->isAlive) {
+    return; // TODO: make a gameOver()
+  }
+
+  int xDirection =
+      IsKeyPressed(KEY_D) - IsKeyPressed(KEY_A); // 1 is right; -1 is left
+  int yDirection =
+      IsKeyPressed(KEY_S) - IsKeyPressed(KEY_W); // 1 is down; -1 is up
+  Vector2 direction = (Vector2){xDirection, yDirection};
+  Vector2 addedPosition = Vector2Scale(direction, p->moveSpeed);
+
+  p->position = Vector2Add(p->position, addedPosition);
+  p->position = Vector2Add(p->position, p->velocity);
 }
 
 void drawPlayer(Player* p) {
