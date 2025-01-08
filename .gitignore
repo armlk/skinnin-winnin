@@ -401,3 +401,4 @@ build_files
 raylib-master
 Makefile
 /*.sln
+*.exe
