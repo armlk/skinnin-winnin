@@ -11,6 +11,6 @@ typedef struct {
   Texture sprite;
 } Enemy;
 
-Enemy* initEnemy(void);
-void updateEnemy(Enemy* e);
-void updateEnemies(Enemy* e[]);
+Enemy initEnemy(void);
+void updateEnemy(Enemy *e);
+void updateEnemies(Enemy *e[]);

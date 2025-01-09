@@ -17,5 +17,5 @@ typedef struct {
   // Bullet* b[]
 } Weapon;
 
-Weapon* initWeapon(void);
-void updateWeapon(Weapon* w);
+Weapon initWeapon(void);
+void updateWeapon(Weapon *w);
