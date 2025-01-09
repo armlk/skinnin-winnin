@@ -14,7 +14,6 @@ typedef struct {
   unsigned int ammo;
   float reloadSpeed; // in Ms
   Texture sprite;
-  // Bullet* b[]
 } Weapon;
 
 Weapon initWeapon(void);
