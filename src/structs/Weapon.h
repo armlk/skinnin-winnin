@@ -1,4 +1,5 @@
 #include "../../build/external/raylib-master/src/raylib.h"
+#include "Bullet.h"
 
 #define DEFAULT_WEAPON_DAMAGE 10
 #define DEFAULT_WEAPON_FIRE_RATE 1
@@ -14,7 +15,11 @@ typedef struct {
   unsigned int ammo;
   float reloadSpeed; // in Ms
   Texture sprite;
+  Vector2 position;
+  float angle;
+  Bullet bullets[];
 } Weapon;
 
 Weapon initWeapon(void);
 void updateWeapon(Weapon *w);
+void fireWeapon(Weapon *w);
