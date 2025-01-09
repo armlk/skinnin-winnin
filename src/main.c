@@ -1,8 +1,10 @@
-#include "../build/external/raylib-master/src/raylib.h"
-#include "../include/resource_dir.h" // utility header for SearchAndSetResourceDir
 #include "main.h"
-#include "structs/Player.c"
+
 #include <stdio.h>
+
+#include "../build/external/raylib-master/src/raylib.h"
+#include "../include/resource_dir.h"  // utility header for SearchAndSetResourceDir
+#include "structs/Player.c"
 
 int main() {
   // Tell the window to use vsync and work on high DPI displays
@@ -14,12 +16,11 @@ int main() {
   // Utility function from resource_dir.h to find the resources folder and set
   // it as the current working directory so we can load from it
   SearchAndSetResourceDir("resources");
-  Texture playerSprite = LoadTexture(DEFAULT_PLAYER_SPRITE);
-  Player p = initPlayer(playerSprite);
+  Player p = initPlayer();
 
   // game loop
-  while (!WindowShouldClose()) // run the loop untill the user presses ESCAPE or
-                               // presses the Close button on the window
+  while (!WindowShouldClose())  // run the loop untill the user presses ESCAPE
+                                // or presses the Close button on the window
   {
     // drawing
     BeginDrawing();

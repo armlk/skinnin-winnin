@@ -2,7 +2,14 @@
 
 typedef struct {
   Rectangle collider;
-  Texture sprite;
+  Color color;
 } Obstacle;
 
-Obstacle* initObstacle(void);
+typedef struct {
+  Obstacle *obstacles;
+  int numObstacles;
+} ObstacleList;
+
+Obstacle initObstacle(float x, float y, float width, float height, Color color);
+ObstacleList initObstacles(int numObstacles);  // treated as an array
+void drawObstacles(ObstacleList obstacleList);

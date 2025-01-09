@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-Player initPlayer(Texture sprite) {
+Player initPlayer() {
     Vector2 defaultPos = (Vector2){SCREEN_WIDTH / 2 - DEFAULT_PLAYER_WIDTH / 2,
                                    SCREEN_HEIGHT / 2 - DEFAULT_PLAYER_HEIGHT / 2};
     Player p = (Player){.health = DEFAULT_PLAYER_HEALTH, 
@@ -18,7 +18,7 @@ Player initPlayer(Texture sprite) {
                             defaultPos.y,
                             DEFAULT_PLAYER_WIDTH,
                             DEFAULT_PLAYER_HEIGHT},
-                .sprite = sprite,
+                .sprite = LoadTexture(DEFAULT_PLAYER_SPRITE),
                 .weapon = (Weapon){0, 0, 0}};
     return p;
 }
@@ -29,9 +29,9 @@ void updatePlayer(Player *p) {
   }
 
   int xDirection =
-      IsKeyPressed(KEY_D) - IsKeyPressed(KEY_A); // 1 is right; -1 is left
+      IsKeyDown(KEY_D) - IsKeyDown(KEY_A); // 1 is right; -1 is left
   int yDirection =
-      IsKeyPressed(KEY_S) - IsKeyPressed(KEY_W); // 1 is down; -1 is up
+      IsKeyDown(KEY_S) - IsKeyDown(KEY_W); // 1 is down; -1 is up
   Vector2 direction = (Vector2){xDirection, yDirection};
   Vector2 addedPosition = Vector2Scale(direction, p->moveSpeed);
 
@@ -40,7 +40,5 @@ void updatePlayer(Player *p) {
 }
 
 void drawPlayer(Player* p) {
-  BeginDrawing();
     DrawTexture(p->sprite, p->position.x, p->position.y, WHITE);
-    EndDrawing();
 }
