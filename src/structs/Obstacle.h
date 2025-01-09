@@ -11,5 +11,7 @@ typedef struct {
 } ObstacleList;
 
 Obstacle initObstacle(float x, float y, float width, float height, Color color);
-ObstacleList initObstacles(int numObstacles);  // treated as an array
+ObstacleList initObstacles(int numObstacles, float xCoords[], float yCoords[],
+                           float widths[], float heights[],
+                           Color colors[]);  // treated as an array
 void drawObstacles(ObstacleList obstacleList);

@@ -2,17 +2,23 @@
 
 Obstacle initObstacle(float x, float y, float width, float height,
                       Color color) {
-  Obstacle o =
-      (Obstacle){.collider = (Rectangle){x, y, width, height}, .color = color};
-  return o;
+  return (Obstacle){.collider = (Rectangle){x, y, width, height},
+                    .color = color};
 }
 
-Obstacle *initObstacles(int numObstacles) {
-  Obstacle *obstacles = malloc(sizeof(Obstacle) * (numObstacles));
+Obstacle initObstacleRec(Rectangle rec, Color color) {
+  return (Obstacle){.collider = rec, .color = color};
+}
+
+ObstacleList initObstacles(int numObstacles, float xCoords[], float yCoords[],
+                           float widths[], float heights[], Color colors[]) {
+  Obstacle *obstacles = malloc(sizeof(Obstacle) * numObstacles);
+  ObstacleList obstacleList = (ObstacleList){obstacles, numObstacles};
   for (int i = 0; i < numObstacles; i++) {
-    obstacles[i] = initObstacle(100, 0, 100, 200, DARKGRAY);
+    obstacleList.obstacles[i] =
+        initObstacle(xCoords[i], yCoords[i], widths[i], heights[i], colors[i]);
   }
-  return obstacles;
+  return obstacleList;
 }
 
 void drawObstacles(ObstacleList obstacleList) {
