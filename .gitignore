@@ -402,3 +402,4 @@ raylib-master
 Makefile
 /*.sln
 *.exe
+.vscode/tasks.json

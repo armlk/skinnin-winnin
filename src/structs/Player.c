@@ -2,11 +2,13 @@
 #include "../main.h"
 #include "../../build/external/raylib-master/src/raylib.h"
 #include "../../build/external/raylib-master/src/raymath.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-Player* initPlayer(void) {
+Player initPlayer(Texture sprite) {
     Vector2 defaultPos = (Vector2){SCREEN_WIDTH / 2 - DEFAULT_PLAYER_WIDTH / 2,
                                    SCREEN_HEIGHT / 2 - DEFAULT_PLAYER_HEIGHT / 2};
-    Player p = {.health = DEFAULT_PLAYER_HEALTH, 
+    Player p = (Player){.health = DEFAULT_PLAYER_HEALTH, 
                 .isAlive = true, 
                 .weight = DEFAULT_PLAYER_WEIGHT, 
                 .moveSpeed = DEFAULT_PLAYER_MOVE_SPEED,
@@ -16,9 +18,9 @@ Player* initPlayer(void) {
                             defaultPos.y,
                             DEFAULT_PLAYER_WIDTH,
                             DEFAULT_PLAYER_HEIGHT},
-                .sprite = LoadTexture(DEFAULT_PLAYER_SPRITE),
+                .sprite = sprite,
                 .weapon = (Weapon){0, 0, 0}};
-    return &p;
+    return p;
 }
 
 void updatePlayer(Player *p) {
@@ -38,5 +40,7 @@ void updatePlayer(Player *p) {
 }
 
 void drawPlayer(Player* p) {
+  BeginDrawing();
     DrawTexture(p->sprite, p->position.x, p->position.y, WHITE);
+    EndDrawing();
 }

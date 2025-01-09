@@ -21,6 +21,6 @@ typedef struct {
   Weapon weapon;
 } Player;
 
-Player *initPlayer(void);
-void updatePlayer(Player *p);
-void drawPlayer(Player *p);
+Player initPlayer(Texture sprite);
+void updatePlayer(Player* p);
+void drawPlayer(Player* p);
