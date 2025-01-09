@@ -1,4 +1,13 @@
 #include "Bullet.h"
-// #include "../../build/external/raylib-master/src/raylib.h"
+#include "../../build/external/raylib-master/src/raylib.h"
 
-Bullet initBullet(float x, float y) { return (Bullet){}; }
+Bullet initBullet(float x, float y, float firedAngle) {
+  Bullet b = {
+      .position = (Vector2){x, y},
+      .velocity = (Vector2){0, 0},
+      .collider =
+          (Rectangle){x, y, DEFAULT_BULLET_WIDTH, DEFAULT_BULLET_HEIGHT},
+      .angle = firedAngle,
+  };
+  return b;
+}
