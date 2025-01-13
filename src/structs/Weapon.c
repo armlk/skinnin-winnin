@@ -1,6 +1,5 @@
 #include "Weapon.h"
-#include "../../build/external/raylib-master/src/raylib.h"
-#include "Bullet.h"
+// #include "../../build/external/raylib-master/src/raylib.h"
 
 Weapon initWeapon(void) {
 
@@ -10,8 +9,8 @@ Weapon initWeapon(void) {
               .ammo = DEFAULT_WEAPON_AMMO,
               .reloadSpeed = DEFAULT_WEAPON_RELOAD_SPEED,
               .sprite = LoadTexture(DEFAULT_WEAPON_SPRITE),
-              .position = (Vector2){0, 0}},
-  .bullets = Bullet[100] return w,
+              .position = (Vector2){0, 0}};
+  return w;
 };
 void updateWeapon(Weapon *w) {
   if (w->ammo == 0) {
