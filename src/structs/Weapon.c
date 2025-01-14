@@ -22,6 +22,5 @@ void updateWeapon(Weapon *w) {
 }
 
 void fireWeapon(Weapon *w) {
-  Bullet b = initBullet(w->position.x, w->position.y, w->angle);
-  w->ammo -= 1;
+  // Call to BulletManager
 }
