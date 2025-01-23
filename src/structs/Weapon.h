@@ -15,9 +15,9 @@ typedef struct {
   float reloadSpeed; // in Ms
   Texture sprite;
   Vector2 position;
-  float angle;
+  float angle; // In deg
 } Weapon;
 
 Weapon initWeapon(void);
-void updateWeapon(Weapon *w);
+void updateWeapon(Weapon *w, float x, float y, float angle);
 void fireWeapon(Weapon *w);

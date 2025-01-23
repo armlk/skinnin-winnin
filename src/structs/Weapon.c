@@ -9,18 +9,19 @@ Weapon initWeapon(void) {
               .ammo = DEFAULT_WEAPON_AMMO,
               .reloadSpeed = DEFAULT_WEAPON_RELOAD_SPEED,
               .sprite = LoadTexture(DEFAULT_WEAPON_SPRITE),
-              .position = (Vector2){0, 0}};
+              .position = (Vector2){0, 0},
+              .angle = 0};
   return w;
 };
-void updateWeapon(Weapon *w) {
-  if (w->ammo == 0) {
-    return;
-  }
+void updateWeapon(Weapon *w, float x, float y, float angle) {
   if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) {
     fireWeapon(w);
   }
 }
 
 void fireWeapon(Weapon *w) {
+  if (w->ammo == 0) {
+    return;
+  }
   // Call to BulletManager
 }
