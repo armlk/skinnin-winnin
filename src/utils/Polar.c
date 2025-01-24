@@ -8,8 +8,8 @@ typedef struct {
 #include "../../build/external/raylib-master/src/raylib.h"
 #include "math.h"
 
-Vector2 polarToCart(Polar *p) {
-  float x = p->r * cos(p->theta);
-  float y = p->r * sin(p->theta);
+Vector2 polarToCart(Polar p) {
+  float x = p.r * cos(p.theta);
+  float y = p.r * sin(p.theta);
   return (Vector2){x, y};
 }

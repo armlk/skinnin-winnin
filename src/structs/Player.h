@@ -18,9 +18,9 @@ typedef struct {
   Vector2 velocity;
   Rectangle collider;
   Texture sprite;
-  Weapon weapon;
+  Weapon *weapon;
 } Player;
 
 Player initPlayer();
-void updatePlayer(Player* p);
-void drawPlayer(Player* p);
+void updatePlayer(Player *p);
+void drawPlayer(Player *p);

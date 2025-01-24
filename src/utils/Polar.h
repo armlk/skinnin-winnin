@@ -5,4 +5,4 @@ typedef struct {
   float theta; // in rad
 } Polar;
 
-Vector2 polarToCart(Polar *p);
+Vector2 polarToCart(Polar p);
