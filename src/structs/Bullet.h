@@ -11,10 +11,12 @@ typedef struct {
   Vector2 position;
   Vector2 velocity;
   Rectangle collider;
-  float angle;  // in rad
+  float angle; // in rad
+  bool isActive;
 } Bullet;
 
-Bullet initBullet(float x, float y, float firedAngle);
+Bullet initBullet();
 void drawBullet(Bullet *b);
+void activateBullet(Bullet *b, float x, float y, float angle);
 
 #endif
