@@ -29,8 +29,8 @@ void fireWeapon(Weapon *w) {
   // Call to BulletManager
 }
 
-void drawWeapon(Weapon *w, Vector2 playerPosition) {
+void drawWeapon(Weapon *w, Vector2 center) {
   Vector2 offset = polarToCart(w->position);
-  DrawTextureEx(w->sprite, Vector2Add(offset, playerPosition),
+  DrawTextureEx(w->sprite, Vector2Add(offset, center),
                 w->position.theta * RAD2DEG, 1, WHITE);
 }

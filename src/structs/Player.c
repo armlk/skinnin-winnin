@@ -37,7 +37,8 @@ void updatePlayer(Player *p) {
   // Calculates the angle the gun has to be rendered at
   // Y is negated to account for the axis being flipped
   Vector2 mPos = GetMousePosition();
-  float angle = atan2f(mPos.y - p->position.y, mPos.x - p->position.x);
+  float angle = atan2f(mPos.y - p->position.y - p->collider.width / 2,
+                       mPos.x - p->position.x - p->collider.height / 2);
   updateWeapon(p->weapon, angle);
 
   if (!p->isAlive) {
@@ -52,9 +53,13 @@ void updatePlayer(Player *p) {
 
   p->position = Vector2Add(p->position, addedPosition);
   p->position = Vector2Add(p->position, p->velocity);
+  p->collider.x = p->position.x;
+  p->collider.y = p->position.y;
 }
 
 void drawPlayer(Player *p) {
   DrawTexture(p->sprite, p->position.x, p->position.y, WHITE);
-  drawWeapon(p->weapon, p->position);
+  Vector2 center = (Vector2){p->position.x + p->collider.width / 2,
+                             p->position.y + p->collider.height / 2};
+  drawWeapon(p->weapon, center);
 }
