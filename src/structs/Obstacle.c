@@ -12,20 +12,18 @@ Obstacle initObstacleRec(Rectangle rec, Color color) {
   return (Obstacle){.collider = rec, .color = color};
 }
 
-ObstacleList initObstacles(int numObstacles, float xCoords[], float yCoords[],
-                           float widths[], float heights[], Color colors[]) {
-  Obstacle *obstacles = malloc(sizeof(Obstacle) * numObstacles);
-  ObstacleList obstacleList = (ObstacleList){obstacles, numObstacles};
-  for (int i = 0; i < numObstacles; i++) {
-    obstacleList.obstacles[i] =
+Obstacle *initObstacles(float xCoords[], float yCoords[], float widths[],
+                        float heights[], Color colors[]) {
+  Obstacle *obstacles = malloc(sizeof(Obstacle) * DEFAULT_ARR_SIZE);
+  for (int i = 0; i < DEFAULT_ARR_SIZE; i++) {
+    obstacles[i] =
         initObstacle(xCoords[i], yCoords[i], widths[i], heights[i], colors[i]);
   }
-  return obstacleList;
+  return obstacles;
 }
 
-void drawObstacles(ObstacleList obstacleList) {
-  for (int i = 0; i < obstacleList.numObstacles; i++) {
-    DrawRectangleRec(obstacleList.obstacles[i].collider,
-                     obstacleList.obstacles[i].color);
+void drawObstacles(Obstacle *obstacles) {
+  for (int i = 0; i < DEFAULT_ARR_SIZE; i++) {
+    DrawRectangleRec(obstacles[i].collider, obstacles[i].color);
   }
 }

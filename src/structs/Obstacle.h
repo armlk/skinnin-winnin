@@ -9,15 +9,10 @@ typedef struct {
   Color color;
 } Obstacle;
 
-typedef struct {
-  Obstacle obstacles[DEFAULT_ARR_SIZE];
-  int numObstacles;
-} ObstacleList;
-
 Obstacle initObstacle(float x, float y, float width, float height, Color color);
-ObstacleList initObstacles(int numObstacles, float xCoords[], float yCoords[],
-                           float widths[], float heights[],
-                           Color colors[]); // treated as an array
-void drawObstacles(ObstacleList obstacleList[]);
+Obstacle *initObstacles(float xCoords[], float yCoords[], float widths[],
+                        float heights[],
+                        Color colors[]);  // treated as an array
+void drawObstacles(Obstacle obstacleList[]);
 
 #endif
