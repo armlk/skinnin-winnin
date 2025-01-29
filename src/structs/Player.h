@@ -1,6 +1,10 @@
+#ifndef PLAYER_H
+#define PLAYER_H
+
+#include <stdbool.h>
+
 #include "../../build/external/raylib-master/src/raylib.h"
 #include "Weapon.h"
-#include <stdbool.h>
 
 #define DEFAULT_PLAYER_HEALTH 100
 #define DEFAULT_PLAYER_WEIGHT 0
@@ -24,3 +28,5 @@ typedef struct {
 Player initPlayer();
 void updatePlayer(Player *p);
 void drawPlayer(Player *p);
+
+#endif

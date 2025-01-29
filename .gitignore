@@ -403,3 +403,4 @@ Makefile
 /*.sln
 *.exe
 .vscode/tasks.json
+*.o

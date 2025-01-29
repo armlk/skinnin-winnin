@@ -1,5 +1,7 @@
 #include "Obstacle.h"
 
+#include <stdlib.h>
+
 Obstacle initObstacle(float x, float y, float width, float height,
                       Color color) {
   return (Obstacle){.collider = (Rectangle){x, y, width, height},

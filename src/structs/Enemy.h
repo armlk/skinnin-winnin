@@ -1,5 +1,9 @@
-#include "../../build/external/raylib-master/src/raylib.h"
+#ifndef ENEMY_H
+#define ENEMY_H
+
 #include <stdbool.h>
+
+#include "../../build/external/raylib-master/src/raylib.h"
 
 #define DEFAULT_ENEMY_HEALTH 100
 #define DEFAULT_ENEMY_MOVE_SPEED 3
@@ -21,3 +25,5 @@ typedef struct {
 Enemy initEnemy(float x, float y);
 void updateEnemy(Enemy *e);
 void updateEnemies(Enemy *e[]);
+
+#endif

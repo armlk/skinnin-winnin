@@ -1,3 +1,6 @@
+#ifndef GENERATORS_H
+#define GENERATORS_H
+
 #include "structs/Obstacle.h"
 
 // here, numObstacles does not include the 5 obstacles used to construct the
@@ -8,3 +11,5 @@ ObstacleList obstaclesGenerator(int numObstacles) {
   return
 }
 */
+
+#endif

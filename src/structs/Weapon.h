@@ -1,3 +1,6 @@
+#ifndef WEAPON_H
+#define WEAPON_H
+
 #include "../../build/external/raylib-master/src/raylib.h"
 #include "../utils/Polar.h"
 
@@ -10,10 +13,10 @@
 
 typedef struct {
   float damage;
-  float fireRate; // in Ms
+  float fireRate;  // in Ms
   float weight;
   unsigned int ammo;
-  float reloadSpeed; // in Ms
+  float reloadSpeed;  // in Ms
   Texture sprite;
   Polar position;
 } Weapon;
@@ -22,3 +25,5 @@ Weapon initWeapon(void);
 void updateWeapon(Weapon *w, float angle);
 void fireWeapon(Weapon *w);
 void drawWeapon(Weapon *w, Vector2 playerPosition);
+
+#endif
