@@ -8,7 +8,7 @@
 #include "Player.h"
 
 typedef struct {
-  Bullet bullets[DEFAULT_ARR_SIZE];
+  Bullet *bullets[DEFAULT_ARR_SIZE];
 } BulletManager;
 
 void fire(
