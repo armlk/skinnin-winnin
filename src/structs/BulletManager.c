@@ -15,6 +15,7 @@ void fire(BulletManager *bm, float x, float y, float firedAngle) {
   for (int i = 0; i < DEFAULT_ARR_SIZE; i++) {
     if (!bm->bullets[i].isActive) {
       activateBullet(&bm->bullets[i], x, y, firedAngle);
+      return;
     }
   }
   // might want to add some logic for an error if theres too many bullets
