@@ -1,4 +1,5 @@
 #include "Weapon.h"
+#include "BulletManager.h"
 
 #include "../../build/external/raylib-master/src/raylib.h"
 #include "../../build/external/raylib-master/src/raymath.h"
@@ -26,7 +27,7 @@ void fireWeapon(Weapon *w) {
   if (w->ammo == 0) {
     return;
   }
-  // Call to BulletManager
+  // fire();
 }
 
 void drawWeapon(Weapon *w, Vector2 center) {

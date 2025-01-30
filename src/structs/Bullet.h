@@ -6,6 +6,7 @@
 #define DEFAULT_BULLET_VELOCITY 15
 #define DEFAULT_BULLET_HEIGHT 5
 #define DEFAULT_BULLET_WIDTH 3
+#define DEFAULT_BULLET_SPRITE "bullet.png"
 
 typedef struct {
   Vector2 position;
@@ -13,10 +14,12 @@ typedef struct {
   Rectangle collider;
   float angle; // in rad
   bool isActive;
+  Texture sprite;
 } Bullet;
 
 Bullet initBullet();
 void drawBullet(Bullet *b);
 void activateBullet(Bullet *b, float x, float y, float angle);
+void updateBullet(Bullet *b);
 
 #endif

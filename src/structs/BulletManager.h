@@ -1,7 +1,7 @@
 #ifndef BULLETMANAGER_H
 #define BULLETMANAGER_H
 
-#include "../main.h"
+#include "../constants.h"
 #include "Bullet.h"
 #include "Enemy.h"
 #include "Obstacle.h"

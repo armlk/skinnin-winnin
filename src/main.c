@@ -1,9 +1,9 @@
-#include "main.h"
+#include "constants.h"
 
 #include <stdio.h>
 
 #include "../build/external/raylib-master/src/raylib.h"
-#include "../include/resource_dir.h"  // utility header for SearchAndSetResourceDir
+#include "../include/resource_dir.h" // utility header for SearchAndSetResourceDir
 #include "structs/Player.h"
 
 int main() {
@@ -19,8 +19,8 @@ int main() {
   Player p = initPlayer();
 
   // game loop
-  while (!WindowShouldClose())  // run the loop untill the user presses ESCAPE
-                                // or presses the Close button on the window
+  while (!WindowShouldClose()) // run the loop untill the user presses ESCAPE
+                               // or presses the Close button on the window
   {
     // drawing
     BeginDrawing();
