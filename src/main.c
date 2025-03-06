@@ -1,9 +1,11 @@
 #include "constants.h"
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "../build/external/raylib-master/src/raylib.h"
 #include "../include/resource_dir.h" // utility header for SearchAndSetResourceDir
+#include "structs/BulletManager.h"
 #include "structs/Player.h"
 
 int main() {
@@ -16,7 +18,11 @@ int main() {
   // Utility function from resource_dir.h to find the resources folder and set
   // it as the current working directory so we can load from it
   SearchAndSetResourceDir("resources");
-  Player p = initPlayer();
+
+  // Inits
+  BulletManager *bm = malloc(sizeof(BulletManager));
+  *bm = initBulletManager();
+  Player p = initPlayer(bm);
 
   // game loop
   while (!WindowShouldClose()) // run the loop untill the user presses ESCAPE

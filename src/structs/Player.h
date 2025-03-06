@@ -13,7 +13,10 @@
 #define DEFAULT_PLAYER_HEIGHT 32
 #define DEFAULT_PLAYER_SPRITE "player-sprite.png"
 
-typedef struct {
+// Forward declaration for BulletMangar
+typedef struct BulletManager BulletManager;
+
+typedef struct Player {
   float health;
   bool isAlive;
   float weight;
@@ -25,7 +28,7 @@ typedef struct {
   Weapon *weapon;
 } Player;
 
-Player initPlayer();
+Player initPlayer(BulletManager *bm);
 void updatePlayer(Player *p);
 void drawPlayer(Player *p);
 

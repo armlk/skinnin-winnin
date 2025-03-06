@@ -4,16 +4,15 @@
 #include "../../build/external/raylib-master/src/raylib.h"
 #include "../../build/external/raylib-master/src/raymath.h"
 
-Weapon initWeapon(void) {
-  Weapon w = {
-      .damage = DEFAULT_WEAPON_DAMAGE,
-      .fireRate = DEFAULT_WEAPON_FIRE_RATE,
-      .weight = DEFAULT_WEAPON_WEIGHT,
-      .ammo = DEFAULT_WEAPON_AMMO,
-      .reloadSpeed = DEFAULT_WEAPON_RELOAD_SPEED,
-      .sprite = LoadTexture(DEFAULT_WEAPON_SPRITE),
-      .position = (Polar){50, 0},
-  };
+Weapon initWeapon(BulletManager *beem) {
+  Weapon w = {.damage = DEFAULT_WEAPON_DAMAGE,
+              .fireRate = DEFAULT_WEAPON_FIRE_RATE,
+              .weight = DEFAULT_WEAPON_WEIGHT,
+              .ammo = DEFAULT_WEAPON_AMMO,
+              .reloadSpeed = DEFAULT_WEAPON_RELOAD_SPEED,
+              .sprite = LoadTexture(DEFAULT_WEAPON_SPRITE),
+              .position = (Polar){50, 0},
+              .bm = beem};
   return w;
 };
 void updateWeapon(Weapon *w, float angle) {

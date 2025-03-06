@@ -6,16 +6,15 @@
 
 #include "../../build/external/raylib-master/src/raylib.h"
 #include "../../build/external/raylib-master/src/raymath.h"
-#include "../main.h"
 #include "Weapon.h"
 
-Player initPlayer() {
+Player initPlayer(BulletManager *bm) {
   Vector2 defaultPos = (Vector2){SCREEN_WIDTH / 2 - DEFAULT_PLAYER_WIDTH / 2,
                                  SCREEN_HEIGHT / 2 - DEFAULT_PLAYER_HEIGHT / 2};
 
   // TODO: Need a null check for the malloced memory and a way to free it
   Weapon *w = (Weapon *)malloc(sizeof(Weapon));
-  Weapon temp = initWeapon();
+  Weapon temp = initWeapon(bm);
   *w = temp;
 
   Player p = (Player){
@@ -42,12 +41,12 @@ void updatePlayer(Player *p) {
   updateWeapon(p->weapon, angle);
 
   if (!p->isAlive) {
-    return;  // TODO: make a gameOver()
+    return; // TODO: make a gameOver()
   }
 
   int xDirection =
-      IsKeyDown(KEY_D) - IsKeyDown(KEY_A);  // 1 is right; -1 is left
-  int yDirection = IsKeyDown(KEY_S) - IsKeyDown(KEY_W);  // 1 is down; -1 is up
+      IsKeyDown(KEY_D) - IsKeyDown(KEY_A); // 1 is right; -1 is left
+  int yDirection = IsKeyDown(KEY_S) - IsKeyDown(KEY_W); // 1 is down; -1 is up
   Vector2 direction = (Vector2){xDirection, yDirection};
   Vector2 addedPosition = Vector2Scale(direction, p->moveSpeed);
 

@@ -5,11 +5,13 @@
 #include "Bullet.h"
 #include "Enemy.h"
 #include "Obstacle.h"
-#include "Player.h"
 
-typedef struct {
+typedef struct BulletManager {
   Bullet *bullets;
 } BulletManager;
+
+// Foward Dec of player. Update as needed.
+typedef struct Player Player;
 
 BulletManager initBulletManager(void);
 

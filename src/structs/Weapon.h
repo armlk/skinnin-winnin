@@ -23,7 +23,7 @@ typedef struct {
   BulletManager *bm;
 } Weapon;
 
-Weapon initWeapon(void);
+Weapon initWeapon(BulletManager *bm);
 void updateWeapon(Weapon *w, float angle);
 void fireWeapon(Weapon *w);
 void drawWeapon(Weapon *w, Vector2 center);

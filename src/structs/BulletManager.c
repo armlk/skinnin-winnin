@@ -1,5 +1,4 @@
 #include "BulletManager.h"
-#include "../main.h"
 #include "Bullet.h"
 #include "stdlib.h"
 #include <stdlib.h>
