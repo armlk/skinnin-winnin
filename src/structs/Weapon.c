@@ -26,7 +26,8 @@ void fireWeapon(Weapon *w) {
   if (w->ammo == 0) {
     return;
   }
-  // fire();
+  fire(w->bm, w->position.theta, 0,
+       0); // THIS FUNCTION IS NOT READY. I NEED TO ACCESS POSITION SOMEHOW.
 }
 
 void drawWeapon(Weapon *w, Vector2 center) {

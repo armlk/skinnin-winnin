@@ -19,3 +19,10 @@ void fire(BulletManager *bm, float x, float y, float firedAngle) {
   }
   // might want to add some logic for an error if theres too many bullets
 }
+
+void drawBullets(BulletManager *bm) {
+  for (int i = 0; i < DEFAULT_ARR_SIZE; i++) {
+    if (bm->bullets[i].isActive)
+      drawBullet(&bm->bullets[i]);
+  }
+}
