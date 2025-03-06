@@ -35,10 +35,11 @@ Player initPlayer(BulletManager *bm) {
 void updatePlayer(Player *p) {
   // Calculates the angle the gun has to be rendered at
   // Y is negated to account for the axis being flipped
+  // Update player does not need to handle this, consider moving?
   Vector2 mPos = GetMousePosition();
   float angle = atan2f(mPos.y - p->position.y - p->collider.width / 2,
                        mPos.x - p->position.x - p->collider.height / 2);
-  updateWeapon(p->weapon, angle);
+  updateWeapon(p->weapon, angle, p->position);
 
   if (!p->isAlive) {
     return; // TODO: make a gameOver()

@@ -24,8 +24,8 @@ typedef struct {
 } Weapon;
 
 Weapon initWeapon(BulletManager *bm);
-void updateWeapon(Weapon *w, float angle);
-void fireWeapon(Weapon *w);
+void updateWeapon(Weapon *w, float angle, Vector2 center);
+void fireWeapon(Weapon *w, Vector2 center);
 void drawWeapon(Weapon *w, Vector2 center);
 
 #endif
