@@ -3,7 +3,7 @@
 #include "stdlib.h"
 #include <stdlib.h>
 
-BulletManager initBulletManager() {
+BulletManager initBulletManager(void) {
   Bullet *bulletArray = (Bullet *)malloc(DEFAULT_ARR_SIZE * sizeof(Bullet));
   BulletManager bm = (BulletManager){.bullets = bulletArray};
   return bm;

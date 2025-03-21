@@ -20,9 +20,8 @@ int main() {
   SearchAndSetResourceDir("resources");
 
   // Inits
-  BulletManager *bm = malloc(sizeof(BulletManager));
-  *bm = initBulletManager();
-  Player p = initPlayer(bm);
+  BulletManager bm = initBulletManager();
+  Player p = initPlayer(&bm);
 
   // game loop
   while (!WindowShouldClose()) // run the loop untill the user presses ESCAPE

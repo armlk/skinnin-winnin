@@ -14,7 +14,7 @@
 #define DEFAULT_PLAYER_SPRITE "player-sprite.png"
 
 // Forward declaration for BulletMangar
-typedef struct BulletManager BulletManager;
+struct BulletManager;
 
 typedef struct Player {
   float health;

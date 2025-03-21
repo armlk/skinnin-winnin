@@ -11,7 +11,7 @@ typedef struct BulletManager {
 } BulletManager;
 
 // Foward Dec of player. Update as needed.
-typedef struct Player Player;
+struct Player;
 
 BulletManager initBulletManager(void);
 
@@ -20,7 +20,7 @@ void fire(
     float firedAngle); // Initializes a bullet and adds it to the bullet array
 
 void updateBullets(
-    BulletManager *bm, Obstacle obs[], Player *p,
+    BulletManager *bm, Obstacle obs[], struct Player *p,
     Enemy enmys[]); // Iterates the bullet array and checks for collisions
 
 void drawBullets(BulletManager *bm); // Draws the bullets
